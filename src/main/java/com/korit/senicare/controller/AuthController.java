@@ -10,6 +10,7 @@ import com.korit.senicare.dto.request.auth.IdCheckRequestDto;
 import com.korit.senicare.dto.response.ResponseDto;
 import com.korit.senicare.service.AuthService;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -20,9 +21,9 @@ public class AuthController {
 
     @PostMapping("/id-check")
     public ResponseEntity<ResponseDto> idCheck(
-        @RequestBody IdCheckRequestDto RequestBody
+        @RequestBody @Valid IdCheckRequestDto requestBody
     ) {
-        ResponseEntity<ResponseDto> response = authService.idCheck(RequestBody);
+        ResponseEntity<ResponseDto> response = authService.idCheck(requestBody);
         return response;
     }
 }

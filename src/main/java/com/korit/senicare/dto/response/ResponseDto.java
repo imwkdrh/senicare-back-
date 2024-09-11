@@ -19,6 +19,11 @@ public class ResponseDto {
         return ResponseEntity.status(HttpStatus.OK).body(responseBody);
     }
     
+    public static ResponseEntity<ResponseDto> validationFail() {
+        ResponseDto responseBody = new ResponseDto(ResponseCode.VALIDATION_FAIL, ResponseMessage.VALIDATION_FAIL);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseBody);
+    }
+    
     public static ResponseEntity<ResponseDto> duplicatedUserId() {
         ResponseDto responseBody = new ResponseDto(ResponseCode.DUPLICATED_USER_ID, ResponseMessage.DUPLICATED_USER_ID);
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseBody);
@@ -28,4 +33,6 @@ public class ResponseDto {
         ResponseDto responseBody = new ResponseDto(ResponseCode.DATABASE_ERROR, ResponseMessage.DATABASE_ERROR);
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(responseBody);
     }
+
+    
 }

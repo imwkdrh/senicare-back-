@@ -6,6 +6,8 @@ public interface ResponseMessage {
     
     String SUCCESS = "Success";
 
+    String VALIDATION_FAIL = "Validation Failed.";
+
     String DUPLICATED_USER_ID = "Duplicated user id.";
 
     String DATABASE_ERROR = "Database error";
