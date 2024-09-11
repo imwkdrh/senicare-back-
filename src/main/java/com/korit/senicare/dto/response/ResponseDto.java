@@ -28,6 +28,21 @@ public class ResponseDto {
         ResponseDto responseBody = new ResponseDto(ResponseCode.DUPLICATED_USER_ID, ResponseMessage.DUPLICATED_USER_ID);
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseBody);
     }
+
+    public static ResponseEntity<ResponseDto> duplicatedTelNumber() {
+        ResponseDto responseBody = new ResponseDto(ResponseCode.DUPLICATED_TEL_NUMBER,ResponseMessage.DUPLICATED_TEL_NUMBER);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseBody);
+    }
+    
+    public static ResponseEntity<ResponseDto> telAuthFail() {
+        ResponseDto responseBody = new ResponseDto(ResponseCode.TEL_AUTH_FAIL,ResponseMessage.TEL_AUTH_FAIL);
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(responseBody);
+    }
+    
+    public static ResponseEntity<ResponseDto> messageSendFail() {
+        ResponseDto responseBody = new ResponseDto(ResponseCode.MESSAGE_SEND_FAIL,ResponseMessage.MESSAGE_SEND_FAIL);
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(responseBody);
+    }
     
     public static ResponseEntity<ResponseDto> databaseError() {
         ResponseDto responseBody = new ResponseDto(ResponseCode.DATABASE_ERROR, ResponseMessage.DATABASE_ERROR);
