@@ -46,14 +46,14 @@ public class OAuth2UserServiceImplement extends DefaultOAuth2UserService {
             Map<String, Object> atttributes = new HashMap<>();
             atttributes.put("snsId", snsId);
             atttributes.put("joinPath", registration);
-            customOAuth2User = new CustomOAuth2User(null, atttributes);
+            customOAuth2User = new CustomOAuth2User(snsId, atttributes,false);
         } else {
             String userId = nurseEntity.getUserId();
             String token = jwtProvider.create(userId);
             Map<String, Object> attributes = new HashMap<>();
             attributes.put("accessToken", token);
 
-            customOAuth2User = new CustomOAuth2User(token, attributes);
+            customOAuth2User = new CustomOAuth2User(token, attributes, true);
 
         }
         return customOAuth2User;
