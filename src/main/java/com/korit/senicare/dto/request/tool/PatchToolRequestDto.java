@@ -6,10 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
-@NoArgsConstructor
-public class PostToolRequestDto {
+
+@Getter@Setter@NoArgsConstructor
+public class PatchToolRequestDto {
     @NotBlank
     private String name;
     @NotBlank

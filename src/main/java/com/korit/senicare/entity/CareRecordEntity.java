@@ -22,7 +22,7 @@ public class CareRecordEntity {
     private Integer recordNumber;
     private String recordDate;
     private String contents;
-    private Integer usedTool;
+    private String usedToolName;
     private Integer count;
     private String charger;
     private Integer customerNumber;
