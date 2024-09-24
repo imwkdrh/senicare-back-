@@ -1,5 +1,7 @@
 package com.korit.senicare.entity;
 
+import com.korit.senicare.dto.request.customer.PostCustomerRequestDto;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -28,4 +30,12 @@ public class CustomerEntity {
     private String location;
     private String profileImage;
     
+    public CustomerEntity(PostCustomerRequestDto dto) {
+        this.profileImage = dto.getProfileImage();
+        this.name = dto.getName();
+        this.birth = dto.getBirth();
+        this.charger = dto.getCharger();
+        this.address = dto.getAddress();
+        this.location = dto.getLocation();
+    }
 }
