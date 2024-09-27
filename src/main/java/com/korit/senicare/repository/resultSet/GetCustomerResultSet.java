@@ -15,4 +15,6 @@ public interface GetCustomerResultSet {
 
     String getAddress();
 
+    String getLocation();
+
 }

@@ -38,6 +38,7 @@ public interface CustomerRepository extends JpaRepository<CustomerEntity, Intege
     "C.name as name, " +
     "C.birth as birth, " +
     "C.address as address, " +
+    "C.location as location, " +
     "N.user_id as chargerId, " +
     "N.name as chargerName " +
     "FROM customers C left JOIN nurses N  ON C.charger=N.user_id " +
