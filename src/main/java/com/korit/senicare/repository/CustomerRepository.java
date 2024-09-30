@@ -11,10 +11,10 @@ import com.korit.senicare.repository.resultSet.GetCustomerResultSet;
 import com.korit.senicare.repository.resultSet.GetCustomersResultSet;
 
 @Repository
-public interface CustomerRepository extends JpaRepository<CustomerEntity, Integer> {
+public interface  CustomerRepository extends JpaRepository<CustomerEntity, Integer> {
 
     CustomerEntity findByCustomerNumber(Integer customerNumber);
-
+    List<CustomerEntity> findByCharger(String charger);
     @Query(value = 
     "SELECT " +
     "C.customer_number as customerNumber, " +
